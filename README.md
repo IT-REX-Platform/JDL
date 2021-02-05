@@ -1,5 +1,5 @@
 # JDL
-
+ 
 ## Generate backend services with following command (taken from output of jhipster jdl -h):
 
 Usage: jhipster jdl|import-jdl [options] [jdlFiles...]
