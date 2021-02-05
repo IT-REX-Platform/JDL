@@ -61,7 +61,7 @@ application {
     skipUserManagement true
     enableSwaggerCodegen true
   }
-  entities Media, Video
+  entities Audio, Image, Video
 }
 
 
@@ -119,39 +119,40 @@ entity LectureQuiz (Content) {
 */
 
 enum MIMETYPE {
-	VIDEO,
-  IMAGE,
-  AUDIO
+  AUDIO_MPEG ("audio/mpeg"),
+  IMAGE_GIF ("image/gif"),
+  IMAGE_JPEG ("image/jpeg")
+  IMAGE_PNG ("image/png"),
+  IMAGE_SVG ("image/svg"),
+	VIDEO_MP4 ("video/mp4")
 }
 
-entity Media{ // Abstract
+entity Audio{
   title String
-  uploadDate LocalDate
+  startDate LocalDate
+  endDate LocalDate
   mimeType MIMETYPE
-  format String
-  location String
-}
-
-/*
-entity Image (Media) {
-
-}
-*/
-
-entity Video{
-  title String
-  uploadDate LocalDate
-  mimeType MIMETYPE
-  format String
-  location String
   length Integer
 }
 
-/*
-entity Audio (Media) {
-
+entity Image{
+  title String
+  startDate LocalDate
+  endDate LocalDate
+  mimeType MIMETYPE
+  width Integer
+  height Integer
 }
-*/
+
+entity Video{
+  title String
+  startDate LocalDate
+  endDate LocalDate
+  mimeType MIMETYPE
+  width Integer
+  height Integer
+  length Integer
+}
 
 relationship OneToMany {
   Course{participation} to Participation{course}
@@ -181,10 +182,10 @@ relationship ManyToOne {
 dto * with mapstruct
 service Course with serviceClass
 // service Person, Participation with no
-service Media, Video with serviceClass
+service Audio, Image, Video with serviceClass
 
 microservice Course, Participation with CourseService
-microservice Media, Video with MediaService
+microservice Audio, Image, Video with MediaService
 
 
 /**
