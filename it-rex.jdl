@@ -43,6 +43,8 @@ application {
   entities Course, Participation
 }
 
+microservice Course, Participation with CourseService
+
 application {
   config {
     baseName MediaService
@@ -64,6 +66,15 @@ application {
   entities Audio, Image, Video
 }
 
+microservice Audio, Image, Video with MediaService
+
+
+// ---------------
+// Entities
+// ---------------
+
+// Generate a service for every entity
+service * with serviceClass
 
 enum PARTICIPATIONTYPE {
   STUDENT,
@@ -160,33 +171,18 @@ relationship OneToMany {
   //Chapter{content} to Content{chapter}
 }
 
-/**
- * Many to one relationship.
- */
 relationship ManyToOne {
   Participation{user(login)} to User
 }
 
-
-//relationship OneToOne {
-  /*
+/*
+relationship OneToOne {
     Course to RexDuell
     Course to QuestionPool
     Course to ContentPool
     Course to Tur
-  */
-//}
-
-
-
-dto * with mapstruct
-service Course with serviceClass
-// service Person, Participation with no
-service Audio, Image, Video with serviceClass
-
-microservice Course, Participation with CourseService
-microservice Audio, Image, Video with MediaService
-
+}
+*/
 
 /**
  * The deployment configuration.

@@ -3,3 +3,5 @@ docker-compose
 kubernetes
 MediaService
 Gateway
+PlayService
+gen/

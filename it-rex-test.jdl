@@ -1,0 +1,87 @@
+// Example: https://medium.com/jhipster/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77
+// Example: https://blog.codecentric.de/en/2020/05/kick-start-your-microservice-project-with-jhipster
+
+application {
+  config {
+    baseName Gateway
+    applicationType gateway
+    packageName de.uni_stuttgart.it_rex.backend
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    prodDatabaseType postgresql
+    skipClient true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    // otherModules [{"name": "generator-jhipster-testcontainers", "version": "1.1.0"},{"name": "generator-codegen", "version": "0.3.1"}]
+  }
+  // We do not really know why this is needed. API forwarding should work independently from entity mappings.
+  // Todo: test if this can be dropped. If so also microservice specification can be dropped.
+  entities * 
+}
+
+application {
+  config {
+    baseName PlayService
+    applicationType microservice
+    packageName de.uni_stuttgart.it_rex.play
+    authenticationType oauth2
+    prodDatabaseType postgresql
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    devDatabaseType h2Disk
+    nativeLanguage en
+    languages [de]
+    serviceDiscoveryType eureka
+    serverPort 8083
+    skipUserManagement false
+    enableSwaggerCodegen true
+  }
+  entities *
+}
+
+// This line is needed to suppress entity generation in the Gateway
+microservice * with PlayService
+
+// ---------------
+// Entities
+// ---------------
+
+// Generate a service for every entity
+service * with serviceClass
+
+entity A {
+  name String
+  type String
+}
+
+entity B {
+  name String
+  country String
+}
+
+entity C {
+  name String
+}
+
+
+/*
+// will be created under 'docker-compose' folder
+deployment {
+  deploymentType docker-compose
+  appsFolders [Gateway, CourseService, MediaService]
+  dockerRepositoryName "itrex"
+}
+
+// will be created under 'kubernetes' folder
+deployment {
+  deploymentType kubernetes
+  appsFolders [Gateway, CourseService, MediaService]
+  dockerRepositoryName "itrex"
+}
+*/
