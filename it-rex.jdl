@@ -66,7 +66,7 @@ application {
 
 
 enum PARTICIPATIONTYPE {
-	STUDENT,
+  STUDENT,
   LECTURER,
   HIWI
 }
@@ -77,7 +77,7 @@ enum PUBLISHSTATE {
 }
 
 entity Course {
-	name String
+  name String
   id UUID
   startDate LocalDate
   endDate LocalDate
@@ -87,16 +87,16 @@ entity Course {
 }
 
 entity Participation {
-	type PARTICIPATIONTYPE
+  type PARTICIPATIONTYPE
 }
 
 /*
 entity Chapter {
-	maxFoodSum Integer
+  maxFoodSum Integer
 }
 
 entity Content { // Abstract
-	order Integer
+  order Integer
   foodReward Integer
   name String
   id UUID
@@ -124,7 +124,7 @@ enum MIMETYPE {
   IMAGE_JPEG ("image/jpeg")
   IMAGE_PNG ("image/png"),
   IMAGE_SVG ("image/svg"),
-	VIDEO_MP4 ("video/mp4")
+  VIDEO_MP4 ("video/mp4")
 }
 
 entity Audio{
