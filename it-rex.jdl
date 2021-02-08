@@ -42,7 +42,6 @@ application {
   }
   entities Course, Participation
 }
-
 microservice Course, Participation with CourseService
 
 application {
@@ -65,16 +64,13 @@ application {
   }
   entities Audio, Image, Video
 }
-
 microservice Audio, Image, Video with MediaService
-
 
 // ---------------
 // Entities
 // ---------------
 
 // Generate a service for every entity
-service * with serviceClass
 
 enum PARTICIPATIONTYPE {
   STUDENT,
@@ -88,8 +84,8 @@ enum PUBLISHSTATE {
 }
 
 entity Course {
-  name String
   id UUID
+  name String
   startDate LocalDate
   endDate LocalDate
   maxFoodSum Integer
@@ -98,6 +94,7 @@ entity Course {
 }
 
 entity Participation {
+  id UUID
   type PARTICIPATIONTYPE
 }
 
@@ -139,6 +136,7 @@ enum MIMETYPE {
 }
 
 entity Audio{
+  id UUID
   title String
   startDate LocalDate
   endDate LocalDate
@@ -147,6 +145,7 @@ entity Audio{
 }
 
 entity Image{
+  id UUID
   title String
   startDate LocalDate
   endDate LocalDate
@@ -156,6 +155,7 @@ entity Image{
 }
 
 entity Video{
+  id UUID
   title String
   startDate LocalDate
   endDate LocalDate
@@ -174,6 +174,9 @@ relationship OneToMany {
 relationship ManyToOne {
   Participation{user(login)} to User
 }
+
+dto * with mapstruct
+service * with serviceClass
 
 /*
 relationship OneToOne {
