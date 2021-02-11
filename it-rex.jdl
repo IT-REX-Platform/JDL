@@ -84,7 +84,7 @@ enum PUBLISHSTATE {
 }
 
 entity Course {
-  id UUID
+  uuid UUID
   name String
   startDate LocalDate
   endDate LocalDate
@@ -94,7 +94,7 @@ entity Course {
 }
 
 entity Participation {
-  id UUID
+  uuid UUID
   type PARTICIPATIONTYPE
 }
 
@@ -136,7 +136,7 @@ enum MIMETYPE {
 }
 
 entity Audio{
-  id UUID
+  uuid UUID
   title String
   startDate LocalDate
   endDate LocalDate
@@ -145,7 +145,7 @@ entity Audio{
 }
 
 entity Image{
-  id UUID
+  uuid UUID
   title String
   startDate LocalDate
   endDate LocalDate
@@ -155,7 +155,7 @@ entity Image{
 }
 
 entity Video{
-  id UUID
+  uuid UUID
   title String
   startDate LocalDate
   endDate LocalDate
@@ -163,6 +163,14 @@ entity Video{
   width Integer
   height Integer
   length Integer
+}
+
+entity Document{
+  uuid UUID
+  title String
+  startDate LocalDate
+  endDate LocalDate
+  mimeType MIMETYPE
 }
 
 relationship OneToMany {
