@@ -62,9 +62,9 @@ application {
     skipUserManagement true
     enableSwaggerCodegen true
   }
-  entities Audio, Image, Video
+  entities Audio, Image, Video, Document
 }
-microservice Audio, Image, Video with MediaService
+microservice Audio, Image, Video, Document with MediaService
 
 // ---------------
 // Entities
