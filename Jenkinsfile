@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('generate code') {
             steps {
-                sh 'jhipster import-jdl it-rex.jdl --force --with-entities'
+                sh 'for file  in *.jdl; do jhipster import-jdl file --force --with-entities done'
             }
         }
         stage('release') {
