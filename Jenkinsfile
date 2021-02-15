@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('generate code') {
             steps {
-                sh './import_all_jdl_files.sh'
+                sh './jhipster_import_all_jdl_files.sh'
             }
         }
         stage('release') {
