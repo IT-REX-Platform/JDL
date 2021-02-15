@@ -6,17 +6,18 @@ application {
     baseName 
     // don't change until next marker
     applicationType microservice
-    packageName de.uni_stuttgart.it_rex.media
     authenticationType oauth2
     serviceDiscoveryType eureka
     skipUserManagement true
-    testFrameworks [cucumber]
+    testFrameworks []
     buildTool gradle
     cacheProvider hazelcast
     nativeLanguage en
     languages [de]
     enableSwaggerCodegen true
     // dont't change until this marker
+    // set your base java package name, port and dbs
+    packageName de.uni_stuttgart.
     serverPort 
     prodDatabaseType
     devDatabaseType 
