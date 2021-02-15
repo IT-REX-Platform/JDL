@@ -1,0 +1,19 @@
+application {
+  config {
+    baseName Gateway
+    applicationType gateway
+    packageName de.uni_stuttgart.it_rex.backend
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    skipClient true
+    skipUserManagement true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    prodDatabaseType postgresql
+    devDatabaseType h2Disk
+  }
+}
