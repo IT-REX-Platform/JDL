@@ -1,0 +1,19 @@
+application {
+  config {
+    baseName CourseService
+    applicationType microservice
+    packageName de.uni_stuttgart.it_rex.course
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    skipUserManagement true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    serverPort 8083
+    prodDatabaseType postgresql
+    devDatabaseType h2Disk
+  }
+}
