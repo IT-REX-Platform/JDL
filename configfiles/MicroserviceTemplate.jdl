@@ -1,0 +1,25 @@
+// Use this as template for creating new microservices
+// Use the other jdl-Files and the jdl-docs for reference
+application {
+  config {
+    // Name your service
+    baseName 
+    // don't change until next marker
+    applicationType microservice
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    skipUserManagement true
+    testFrameworks []
+    buildTool gradle
+    cacheProvider hazelcast
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    // dont't change until this marker
+    // set your base java package name, port and dbs
+    packageName de.uni_stuttgart.
+    serverPort 
+    prodDatabaseType
+    devDatabaseType 
+  }
+}

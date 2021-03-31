@@ -1,0 +1,19 @@
+application {
+  config {
+    baseName MediaService
+    applicationType microservice
+    packageName de.uni_stuttgart.it_rex.media
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    skipUserManagement true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    serverPort 8082
+    prodDatabaseType postgresql
+    devDatabaseType h2Disk
+  }
+}

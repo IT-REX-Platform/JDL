@@ -1,5 +1,13 @@
 # JDL
 
+For general information about JDL@ITREX, see: [How to JHipster Microservices](https://github.com/IT-REX-Platform/Wiki/wiki/Development--How-to-JHipster-Microservices).
+
+## Examples
+
+Example: https://medium.com/jhipster/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77
+Example: https://blog.codecentric.de/en/2020/05/kick-start-your-microservice-project-with-jhipster
+
+
 ## Generate backend services with following command (taken from output of jhipster jdl -h):
 
 Usage: jhipster jdl|import-jdl [options] [jdlFiles...]
