@@ -1,0 +1,18 @@
+application {
+  config {
+    baseName QuizService
+    applicationType microservice
+    packageName de.uni_stuttgart.it_rex.quiz
+    authenticationType oauth2
+    serviceDiscoveryType eureka
+    skipUserManagement true
+    testFrameworks [cucumber]
+    buildTool gradle
+    cacheProvider hazelcast
+    nativeLanguage en
+    languages [de]
+    enableSwaggerCodegen true
+    serverPort 8084
+    databaseType mongodb
+  }
+}
